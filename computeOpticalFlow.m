@@ -75,19 +75,21 @@ for person = 1:319
                 M = M + 127;
                 P = theta + 127;
 
-                %images should be between 0 and 255
-                %convert scale to this range before saving
                 imgDims = size(seqImg);
                 tmpImg = zeros(imgDims);
                 tmpImg(:,:,1) = H;
                 tmpImg(:,:,2) = V;
                 tmpImg(:,:,3) = 0;
+                
+                tmpImg(tmpImg < 0) = 0;
+                tmpImg(tmpImg > 255) = 255;
 
                 tmpImg = tmpImg ./ 255;            
 
                 %save optical flow image to file
-                saveFile = fullfile(saveDir,seqFiles{f});           
-            end  
+                saveFile = fullfile(saveDir,seqFiles{f});
+                imwrite(tmpImg,saveFile);
+            end
         end
     end
 end
