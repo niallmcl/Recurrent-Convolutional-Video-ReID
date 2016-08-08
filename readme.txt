@@ -24,7 +24,7 @@ The optical flow files were produced using the Matlab code in computeOpticalFlow
 
 This matlab code should be used to generate optical flow files before training the neural network. Alternatively, use the flag –dissableOpticalFlow
 
-Note - Modify lines 54-61 of videoReid.lua to point to the directories containing the video-reid datasets and generated optical flow files
+Note - Modify lines 70-77 of videoReid.lua to point to the directories containing the video-reid datasets and generated optical flow files
 
 
 Running the code
