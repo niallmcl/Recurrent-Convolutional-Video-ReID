@@ -23,17 +23,17 @@ local dataset_utils = {}
 -- given the dataset, which consists of a table where t[x] contains the images for person x
 -- split the dataset into testing and training parts
 function dataset_utils.partitionDataset(nTotalPersons,testTrainSplit)
-	local splitPoint = torch.floor(nTotalPersons * testTrainSplit)
-	local inds = torch.randperm(nTotalPersons)
+    local splitPoint = torch.floor(nTotalPersons * testTrainSplit)
+    local inds = torch.randperm(nTotalPersons)
 
-	-- save the inds to a mat file
-	--mattorch.save('rnnInds.mat',inds)
+    -- save the inds to a mat file
+    --mattorch.save('rnnInds.mat',inds)
 
-	trainInds = inds[{{1,splitPoint}}]
-	testInds = inds[{{splitPoint+1,nTotalPersons}}]
+    trainInds = inds[{{1,splitPoint}}]
+    testInds = inds[{{splitPoint+1,nTotalPersons}}]
 
-	print('N train = ' .. trainInds:size(1))
-	print('N test  = ' .. testInds:size(1))
+    print('N train = ' .. trainInds:size(1))
+    print('N test  = ' .. testInds:size(1))
 
     -- save the split to a file for later use
     -- datasetSplit = {
@@ -42,7 +42,7 @@ function dataset_utils.partitionDataset(nTotalPersons,testTrainSplit)
     -- }
     -- torch.save('./trainedNets/dataSplit_PRID2011.th7',datasetSplit)
 
-	return trainInds,testInds
+    return trainInds,testInds
 end
 
 -- the dataset format is dataset[person][camera][nSeq][nCrop][FeatureVec]
@@ -76,9 +76,9 @@ end
 -- choose a pair of sequences from different people
 function dataset_utils.getNegSample(dataset,trainInds,sampleSeqLen)
 
-	local permAllPersons = torch.randperm(trainInds:size(1))
-	local personA = permAllPersons[1]--torch.floor(torch.rand(1)[1] * 2) + 1
-	local personB = permAllPersons[2]--torch.floor(torch.rand(1)[1] * 2) + 1
+    local permAllPersons = torch.randperm(trainInds:size(1))
+    local personA = permAllPersons[1]--torch.floor(torch.rand(1)[1] * 2) + 1
+    local personB = permAllPersons[2]--torch.floor(torch.rand(1)[1] * 2) + 1
 
     -- choose the camera, ilids video only has two, but change this for other datasets
     local camA = torch.floor(torch.rand(1)[1] * 2) + 1

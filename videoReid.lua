@@ -60,7 +60,7 @@ opt = cmd:parse(arg)
 print(opt)
 
 function isnan(z)
-	return z ~= z
+    return z ~= z
 end
 
 torch.manualSeed(opt.seed)
@@ -69,10 +69,10 @@ cutorch.manualSeed(opt.seed)
 -- change these paths to point to the place where you store i-lids or prid datasets
 homeDir = paths.home
 if opt.dataset == 1 then
-	seqRootRGB = homeDir .. '/Documents/i-LIDS-VID/sequences/'
+    seqRootRGB = homeDir .. '/Documents/i-LIDS-VID/sequences/'
     seqRootOF = homeDir .. '/Documents/i-LIDS-VID-OF-HVP/sequences/'
 else
-	seqRootRGB = homeDir .. '/Documents/PRID2011/multi_shot/'
+    seqRootRGB = homeDir .. '/Documents/PRID2011/multi_shot/'
     seqRootOF = homeDir .. '/Documents/PRID2011-OF-HVP/multi_shot/'
 end
 
@@ -81,7 +81,7 @@ dataset = prepDataset.prepareDataset(seqRootRGB,seqRootOF,'.png')
 print('dataset loaded',#dataset,seqRootRGB,seqRootOF)
 
 if opt.usePredefinedSplit then
-	-- useful for debugging to run with exactly the same test/train split
+    -- useful for debugging to run with exactly the same test/train split
     print('loading predefined test/training split')
     local datasetSplit
     if opt.dataset == 1 then
@@ -118,7 +118,7 @@ trainedConvnet:evaluate()
 nTestImages = {1,2,4,8,16,32,64,128}
 
 for n = 1,#nTestImages do
-	print('test multiple images '..nTestImages[n])
-	-- default method of computing CMC curve
-	computeCMC_MeanPool_RNN(dataset,testInds,trainedConvnet,128,nTestImages[n])
+    print('test multiple images '..nTestImages[n])
+    -- default method of computing CMC curve
+    computeCMC_MeanPool_RNN(dataset,testInds,trainedConvnet,128,nTestImages[n])
 end

@@ -1,4 +1,5 @@
-An implementation of our CVPR 2016 paper "Recurrent Convolutional Network for Video-based Person Re-Identification"
+An implementation of our CVPR 2016 paper 
+"Recurrent Convolutional Network for Video-based Person Re-Identification"
 
 If you use this code please cite:
 

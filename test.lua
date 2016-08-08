@@ -21,7 +21,7 @@
 -- standard method of computing the CMC curve using sequences
 function computeCMC_MeanPool_RNN(personImgs,cmcTestInds,net,outputSize,sampleSeqLength)
 
-	net:evaluate()
+    net:evaluate()
 
     local nPersons = cmcTestInds:size(1)
 
@@ -47,8 +47,8 @@ function computeCMC_MeanPool_RNN(personImgs,cmcTestInds,net,outputSize,sampleSeq
                 seq_length = actualSampleLen
                 local seq = personImgs[cmcTestInds[i]][1][{{1,1 + (actualSampleLen - 1)},{},{}}]:squeeze():clone()
                 if seq:dim() == 3 then
-	        		seq:resize(1,seq:size(1),seq:size(2),seq:size(3))
-	        	end
+                    seq:resize(1,seq:size(1),seq:size(2),seq:size(3))
+                end
                 -- augment each of the images in the sequence
                 local augSeq = {}
                 local feats_cam_a_mp = {}
@@ -80,8 +80,8 @@ function computeCMC_MeanPool_RNN(personImgs,cmcTestInds,net,outputSize,sampleSeq
                 seq_length = actualSampleLen
                 local seq = personImgs[cmcTestInds[i]][2][{{seqOffset,seqOffset + (actualSampleLen - 1)},{},{}}]:squeeze():clone()
                 if seq:dim() == 3 then
-	        		seq:resize(1,seq:size(1),seq:size(2),seq:size(3))
-	        	end
+                    seq:resize(1,seq:size(1),seq:size(2),seq:size(3))
+                end
                 -- augment each of the images in the sequence
                 local augSeq = {}
                 local feats_cam_b_mp = torch.DoubleTensor(actualSampleLen,outputSize)
@@ -152,9 +152,9 @@ function computeCMC_MeanPool_RNN(personImgs,cmcTestInds,net,outputSize,sampleSeq
     cmc = (cmc / nPersons) * 100
     cmcString = ''
     for c = 1,50 do
-    	if c <= nPersons then
-        	cmcString = cmcString .. ' ' .. torch.floor(cmc[c])
-    	end
+        if c <= nPersons then
+            cmcString = cmcString .. ' ' .. torch.floor(cmc[c])
+        end
     end
     print(cmcString)
 
