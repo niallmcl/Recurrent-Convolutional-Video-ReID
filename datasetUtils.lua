@@ -1,3 +1,23 @@
+-- Copyright (c) 2016 Niall McLaughlin, CSIT, Queen's University Belfast, UK
+-- Contact: nmclaughlin02@qub.ac.uk
+-- If you use this code please cite:
+-- "Recurrent Convolutional Network for Video-based Person Re-Identification",
+-- N McLaughlin, J Martinez Del Rincon, P Miller, 
+-- IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016
+-- 
+-- This software is licensed for research and non-commercial use only.
+-- 
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+-- 
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
+
 local dataset_utils = {}
 
 -- given the dataset, which consists of a table where t[x] contains the images for person x

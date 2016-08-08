@@ -1,3 +1,11 @@
+An implementation of our CVPR 2016 paper "Recurrent Convolutional Network for Video-based Person Re-Identification"
+
+If you use this code please cite:
+
+"Recurrent Convolutional Network for Video-based Person Re-Identification",
+N McLaughlin, J Martinez Del Rincon, P Miller, 
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016
+
 Summary
 -------
 
