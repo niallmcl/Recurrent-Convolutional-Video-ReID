@@ -33,6 +33,6 @@ For this code to run you must have Torch7 installed with the nn, nnx, cunn, rnn,
 
 You must have an Nvidia GPU in order to use CUDA. See http://torch.ch/ for details.
 
-Example command-line options that will allow you to run the code in standard configuration:
+Example command-line options that will allow you to run the code in standard configuration (Update 10 Jan 2018 - please use use 1000 epochs for training in order to reproduce results from the paper):
 
-	th videoReid.lua -nEpochs 500 -dataset 1 -dropoutFrac 0.6 -sampleSeqLength 16 -samplingEpochs 100 -seed 1
+	th videoReid.lua -nEpochs 1000 -dataset 1 -dropoutFrac 0.6 -sampleSeqLength 16 -samplingEpochs 100 -seed 1
